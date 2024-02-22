@@ -1,10 +1,10 @@
 -- USE（データベース名）で操作対象のデータベースを指定
-USE sample_db;
+mysql> USE sample_db;
 -- 結果
 Database changed
 
 -- CREATE TABLE （テーブル名）（カラム名 データ型, , ,）でテーブルを新規作成
-CREATE TABLE test_scores (id INT, name VARCHAR(100),english VARCHAR(100), math VARCHAR(100), science VARCHAR(100));
+mysql> CREATE TABLE test_scores (id INT, name VARCHAR(100),english VARCHAR(100), math VARCHAR(100), science VARCHAR(100));
 -- 結果
 Query OK, 0 rows affected (0.08 sec)
 
@@ -19,7 +19,7 @@ SHOW TABLES;
 1 row in set (0.01 sec)
 
 -- DESCRIBE（テーブル名）でテーブルの構造を参照
-DESCRIBE test_scores;
+mysql> DESCRIBE test_scores;
 -- 結果
 +---------+--------------+------+-----+---------+-------+
 | Field   | Type         | Null | Key | Default | Extra |
