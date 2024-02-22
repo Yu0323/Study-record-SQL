@@ -1,6 +1,6 @@
 -- SHOW DATABASESで全てのデータベースを参照
 SHOW DATABASES;
---結果
+-- 結果
 +--------------------+
 | Database           |
 +--------------------+
@@ -13,7 +13,7 @@ SHOW DATABASES;
 
 -- LIKE節を用いてパターンマッチングを行う
 SHOW DATABASES LIKE '%schema';
---結果
+-- 結果
 +--------------------+
 | Database (%schema) |
 +--------------------+
@@ -24,7 +24,7 @@ SHOW DATABASES LIKE '%schema';
 
 -- CREATE DATABASE （データベース名）でデータベースの作成を行う
 CREATE DATABASE sample_db;
---結果
+-- 結果
 Query OK, 1 row affected (0.01 sec)
 +--------------------+
 | Database           |
@@ -39,7 +39,7 @@ Query OK, 1 row affected (0.01 sec)
 
 -- DROP DATABASE （データベース名）でデータベースの削除を行う
 DROP DATABASE sample_db;
---結果
+-- 結果
 Query OK, 0 rows affected (0.09 sec)
 +--------------------+
 | Database           |
