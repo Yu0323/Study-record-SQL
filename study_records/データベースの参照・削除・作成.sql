@@ -1,8 +1,6 @@
--- SHOW DATABASESで全てのデータベースを参照することができる
-
---Input
+-- SHOW DATABASESで全てのデータベースを参照
 SHOW DATABASES;
---Output
+--結果
 +--------------------+
 | Database           |
 +--------------------+
@@ -13,11 +11,9 @@ SHOW DATABASES;
 +--------------------+
 4 rows in set (0.24 sec)
 
--- LIKE節を用いてパターンマッチングを行うことができる
-
---Input
+-- LIKE節を用いてパターンマッチングを行う
 SHOW DATABASES LIKE '%schema';
---Output
+--結果
 +--------------------+
 | Database (%schema) |
 +--------------------+
@@ -26,11 +22,9 @@ SHOW DATABASES LIKE '%schema';
 +--------------------+
 2 rows in set (0.01 sec)
 
--- CREATE DATABASE （データベース名）でデータベースの作成を行うことができる
-
---Input
+-- CREATE DATABASE （データベース名）でデータベースの作成を行う
 CREATE DATABASE sample_db;
---OutPut
+--結果
 Query OK, 1 row affected (0.01 sec)
 +--------------------+
 | Database           |
@@ -43,10 +37,9 @@ Query OK, 1 row affected (0.01 sec)
 +--------------------+
 5 rows in set (0.00 sec)
 
--- DROP DATABASE （データベース名）でデータベースの削除を行うことができる
---Input
+-- DROP DATABASE （データベース名）でデータベースの削除を行う
 DROP DATABASE sample_db;
---OutPut
+--結果
 Query OK, 0 rows affected (0.09 sec)
 +--------------------+
 | Database           |
