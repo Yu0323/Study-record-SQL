@@ -1,4 +1,4 @@
-mysql> SHOW DATABASES;
+SHOW DATABASES;
 +--------------------+
 | Database           |
 +--------------------+
@@ -9,7 +9,7 @@ mysql> SHOW DATABASES;
 +--------------------+
 4 rows in set (0.24 sec)
 
-mysql> SHOW DATABASES LIKE '%schema';
+SHOW DATABASES LIKE '%schema';
 +--------------------+
 | Database (%schema) |
 +--------------------+
@@ -18,7 +18,7 @@ mysql> SHOW DATABASES LIKE '%schema';
 +--------------------+
 2 rows in set (0.01 sec)
 
-mysql> CREATE DATABASE sample_db;
+CREATE DATABASE sample_db;
 Query OK, 1 row affected (0.01 sec)
 
 mysql> SHOW DATABASES;
@@ -33,7 +33,7 @@ mysql> SHOW DATABASES;
 +--------------------+
 5 rows in set (0.00 sec)
 
-mysql> DROP DATABASE sample_db;
+DROP DATABASE sample_db;
 Query OK, 0 rows affected (0.09 sec)
 
 mysql> SHOW DATABASES;
