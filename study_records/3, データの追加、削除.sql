@@ -1,5 +1,5 @@
 -- INSERT INTO（テーブル名）（カラム名,,,）VALUES（要素,,,）でテーブルにデータを追加する
-INSERT INTO test_scores (id,name,english,math,science) VALUES (1,'Yu',98,97,65);
+mysql> INSERT INTO test_scores (id,name,english,math,science) VALUES (1,'Yu',98,97,65);
 Query OK, 1 row affected (0.02 sec)
 +---------+--------------+------+-----+---------+-------+
 | Field   | Type         | Null | Key | Default | Extra |
