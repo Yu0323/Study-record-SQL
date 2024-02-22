@@ -1,5 +1,6 @@
 -- INSERT INTO（テーブル名）（カラム名, , ,）VALUES（要素, , ,）でテーブルにデータを追加する
 mysql> INSERT INTO test_scores (id,name,english,math,science) VALUES (1,'Yu',98,97,65);
+-- 結果
 Query OK, 1 row affected (0.02 sec)
 +---------+--------------+------+-----+---------+-------+
 | Field   | Type         | Null | Key | Default | Extra |
@@ -12,23 +13,15 @@ Query OK, 1 row affected (0.02 sec)
 +---------+--------------+------+-----+---------+-------+
 5 rows in set (0.01 sec)
 
-mysql> SELECT * FROM test_scores;
-+------+------+---------+------+---------+
-| id   | name | english | math | science |
-+------+------+---------+------+---------+
-|    1 | Yu   | 98      | 97   | 65      |
-+------+------+---------+------+---------+
-1 row in set (0.01 sec)
-
-mysql> INSERT INTO menus VALUES (2,'Ai',85,90,76);
-ERROR 1146 (42S02): Table 'sample_db.menus' doesn't exist
+-- INSERT INTO（テーブル名）VALUES（要素, , ,）でテーブルにデータを追加する
 mysql> INSERT INTO test_scores VALUES (2,'Ai',96,80,76);
+-- 結果
 Query OK, 1 row affected (0.01 sec)
 
+-- INSERT INTO（テーブル名）SET カラム名 = 要素, , , でテーブルにデータを追加する
 mysql> INSERT INTO test_scores SET id = 3, name = 'Ken', english =  90, math = 67, science = 78;
+-- 結果
 Query OK, 1 row affected (0.01 sec)
-
-mysql> SELECT * FROM test_scores;
 +------+------+---------+------+---------+
 | id   | name | english | math | science |
 +------+------+---------+------+---------+
