@@ -1,6 +1,7 @@
 -- SHOW DATABASESで全てのデータベースを参照
 mysql> SHOW DATABASES;
 -- 結果
+/*
 +--------------------+
 | Database           |
 +--------------------+
@@ -10,10 +11,12 @@ mysql> SHOW DATABASES;
 | sys                |
 +--------------------+
 4 rows in set (0.24 sec)
+*/
 
 -- LIKE節を用いてパターンマッチングを行う
 mysql> SHOW DATABASES LIKE '%schema';
 -- 結果
+/*
 +--------------------+
 | Database (%schema) |
 +--------------------+
@@ -21,10 +24,12 @@ mysql> SHOW DATABASES LIKE '%schema';
 | performance_schema |
 +--------------------+
 2 rows in set (0.01 sec)
+*/
 
 -- CREATE DATABASE （データベース名）でデータベースの作成を行う
 mysql> CREATE DATABASE sample_db;
 -- 結果
+/*
 Query OK, 1 row affected (0.01 sec)
 +--------------------+
 | Database           |
@@ -36,10 +41,12 @@ Query OK, 1 row affected (0.01 sec)
 | sys                |
 +--------------------+
 5 rows in set (0.00 sec)
+*/
 
 -- DROP DATABASE （データベース名）でデータベースの削除を行う
 mysql> DROP DATABASE sample_db;
 -- 結果
+/*
 Query OK, 0 rows affected (0.09 sec)
 +--------------------+
 | Database           |
@@ -50,3 +57,4 @@ Query OK, 0 rows affected (0.09 sec)
 | sys                |
 +--------------------+
 4 rows in set (0.00 sec)
+*/
