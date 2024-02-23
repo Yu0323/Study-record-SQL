@@ -7,5 +7,5 @@
 ## 参考文献
 SQL構文の勉強にあたり，以下のサイトを参考にさせていただいています．
 
-- [プロメモ 【初心者でもわかるMySQL入門】MySQLの使い方を基礎からマスター](https://prog-8.com/courses/sql)
-- [Progate SQLコース](https://26gram.com/mysql)
+- [プロメモ 【初心者でもわかるMySQL入門】MySQLの使い方を基礎からマスター](https://26gram.com/mysql)
+- [Progate SQLコース](https://prog-8.com/courses/sql)
