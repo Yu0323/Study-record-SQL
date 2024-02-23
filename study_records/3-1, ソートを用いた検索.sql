@@ -1,4 +1,19 @@
-mysql> SELECT * FROM test_scores ORDER BY english;
+/*
+<test_scores 拡張版>
++------+--------+---------+------+---------+
+| id   | name   | english | math | science |
++------+--------+---------+------+---------+
+|    1 | Yu     | 98      | 97   | 65      |
+|    2 | Ai     | 96      | 80   | 76      |
+|    3 | Ken    | 90      | 67   | 78      |
+|    4 |        | 67      | 89   | 90      |
+|    5 | Ishida | 78      | 98   | NULL    |
++------+--------+---------+------+---------+
+*/
+-- ORDER BYでデータを昇順にソート
+SELECT * FROM test_scores ORDER BY english;
+-- 結果
+/*
 +------+--------+---------+------+---------+
 | id   | name   | english | math | science |
 +------+--------+---------+------+---------+
@@ -9,8 +24,12 @@ mysql> SELECT * FROM test_scores ORDER BY english;
 |    1 | Yu     | 98      | 97   | 65      |
 +------+--------+---------+------+---------+
 5 rows in set (0.03 sec)
+*/
 
-mysql> SELECT * FROM test_scores ORDER BY english DESC;
+-- DESCを末尾に付けて降順にソート
+SELECT * FROM test_scores ORDER BY english DESC;
+-- 結果
+/*
 +------+--------+---------+------+---------+
 | id   | name   | english | math | science |
 +------+--------+---------+------+---------+
@@ -21,11 +40,27 @@ mysql> SELECT * FROM test_scores ORDER BY english DESC;
 |    4 |        | 67      | 89   | 90      |
 +------+--------+---------+------+---------+
 5 rows in set (0.00 sec)
+*/
 
-mysql> INSERT INTO test_scores (id,name,english,math,science) VALUES (6,'Miyoshi',96,84,53);
-Query OK, 1 row affected (0.01 sec)
+/*
+<test_scores 拡張版>
++------+---------+---------+------+---------+
+| id   | name    | english | math | science |
++------+---------+---------+------+---------+
+|    1 | Yu      | 98      | 97   | 65      |
+|    2 | Ai      | 96      | 80   | 76      |
+|    3 | Ken     | 90      | 67   | 78      |
+|    4 |         | 67      | 89   | 90      |
+|    5 | Ishida  | 78      | 98   | NULL    |
+|    6 | Miyoshi | 96      | 84   | 53      |
++------+---------+---------+------+---------+
+※適当なデータを入力した
+*/
 
-mysql> SELECT * FROM test_scores ORDER BY english DESC, math;
+-- まずenglishで降順にソート、値が同じである場合にmathで昇順にソート
+SELECT * FROM test_scores ORDER BY english DESC, math;
+-- 結果
+/*
 +------+---------+---------+------+---------+
 | id   | name    | english | math | science |
 +------+---------+---------+------+---------+
@@ -37,8 +72,12 @@ mysql> SELECT * FROM test_scores ORDER BY english DESC, math;
 |    4 |         | 67      | 89   | 90      |
 +------+---------+---------+------+---------+
 6 rows in set (0.01 sec)
+*/
 
-mysql> SELECT * FROM test_scores WHERE math BETWEEN 80 AND 90 ORDER BY english;
+-- WHEREを用いて条件を満たすデータだけ取り出した後に、ORDER BYでソートを行う
+SELECT * FROM test_scores WHERE math BETWEEN 80 AND 90 ORDER BY english;
+-- 結果
+\*
 +------+---------+---------+------+---------+
 | id   | name    | english | math | science |
 +------+---------+---------+------+---------+
@@ -47,7 +86,8 @@ mysql> SELECT * FROM test_scores WHERE math BETWEEN 80 AND 90 ORDER BY english;
 |    6 | Miyoshi | 96      | 84   | 53      |
 +------+---------+---------+------+---------+
 3 rows in set (0.01 sec)
-
+*\
+  
 mysql> SELECT * FROM test_scores ORDER BY FIELD(math,80,67,98);
 +------+---------+---------+------+---------+
 | id   | name    | english | math | science |
