@@ -39,8 +39,8 @@ SELECT math, science FROM test_scores;
 
 -- 末尾を;から\Gに変更すると縦に表示される
 SELECT * FROM test_scores\G
-/*
 -- 結果
+/*
 *************************** 1. row ***************************
      id: 1
    name: Yu
