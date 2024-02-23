@@ -3,7 +3,6 @@ INSERT INTO test_scores (id,name,english,math,science) VALUES (1,'Yu',98,97,65);
 -- 結果
 /*
 Query OK, 1 row affected (0.02 sec)
-※適当なデータを入力した
 */
 
 -- INSERT INTO（テーブル名）VALUES（要素, , ,）でテーブルにデータを追加する
