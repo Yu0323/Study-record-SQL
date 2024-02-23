@@ -40,6 +40,8 @@ mysql> SELECT * FROM test_scores WHERE math > 70;
 |    2 | Ai   | 96      | 80   | 76      |
 +------+------+---------+------+---------+
 2 rows in set (0.01 sec)
+
+-- ここからは後にも学習を行う発展内容
   
 -- WHERE（カラム名）IS NULLで、指定したカラムが空白であるデータを取り出す、IS NOT NULLなら空白でないデータを取り出す
 mysql> SELECT * FROM test_scores WHERE math IS NULL;
