@@ -1,3 +1,4 @@
+/*
 <test_scores 拡張版>
 +------+--------+---------+------+---------+
 | id   | name   | english | math | science |
@@ -8,19 +9,23 @@
 |    4 |        | 67      | 89   | 90      |
 |    5 | Ishida | 78      | 98   | NULL    |
 +------+--------+---------+------+---------+
+*/
 -- 6か90をscienceカラムの値に含むデータを取り出す
-mysql> SELECT * FROM test_scores WHERE science IN (6,90);
+SELECT * FROM test_scores WHERE science IN (6,90);
 -- 結果
+/*
 +------+------+---------+------+---------+
 | id   | name | english | math | science |
 +------+------+---------+------+---------+
 |    4 |      | 67      | 89   | 90      |
 +------+------+---------+------+---------+
 1 row in set (0.01 sec)
+*/
 
 -- 78と90のどちらもscienceカラムの値に含まないデータを取り出す
-mysql> SELECT * FROM test_scores WHERE science NOT IN (78,90);
+SELECT * FROM test_scores WHERE science NOT IN (78,90);
 -- 結果
+/*
 +------+------+---------+------+---------+
 | id   | name | english | math | science |
 +------+------+---------+------+---------+
@@ -28,10 +33,12 @@ mysql> SELECT * FROM test_scores WHERE science NOT IN (78,90);
 |    2 | Ai   | 96      | 80   | 76      |
 +------+------+---------+------+---------+
 2 rows in set (0.01 sec)
+*/
 
 -- IN句の中にSELECT句を用いることができる。この場合はenglishカラムの値をscienceカラムに含むデータを取り出している
-mysql> SELECT * FROM test_scores WHERE science IN (SELECT english FROM test_scores);
+SELECT * FROM test_scores WHERE science IN (SELECT english FROM test_scores);
 -- 結果
+/*
 +------+------+---------+------+---------+
 | id   | name | english | math | science |
 +------+------+---------+------+---------+
@@ -39,3 +46,4 @@ mysql> SELECT * FROM test_scores WHERE science IN (SELECT english FROM test_scor
 |    4 |      | 67      | 89   | 90      |
 +------+------+---------+------+---------+
 2 rows in set (0.00 sec)
+*/
