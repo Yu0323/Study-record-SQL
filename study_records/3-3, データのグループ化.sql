@@ -27,7 +27,7 @@ SELECT english FROM test_scores GROUP BY english;
 | 98      |
 +---------+
 5 rows in set (0.01 sec)
-/*
+*/
 
 -- COUNT関数（後に学習する）を用いて、データの重複の数を調べる
 SELECT english, COUNT(*) FROM test_scores GROUP BY english;
