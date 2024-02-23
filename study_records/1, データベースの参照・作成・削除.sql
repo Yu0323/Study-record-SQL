@@ -27,7 +27,7 @@ SHOW DATABASES LIKE '%schema';
 */
 
 -- CREATE DATABASE （データベース名）でデータベースの作成を行う
-mysql> CREATE DATABASE sample_db;
+CREATE DATABASE sample_db;
 -- 結果
 /*
 Query OK, 1 row affected (0.01 sec)
@@ -44,7 +44,7 @@ Query OK, 1 row affected (0.01 sec)
 */
 
 -- DROP DATABASE （データベース名）でデータベースの削除を行う
-mysql> DROP DATABASE sample_db;
+DROP DATABASE sample_db;
 -- 結果
 /*
 Query OK, 0 rows affected (0.09 sec)
