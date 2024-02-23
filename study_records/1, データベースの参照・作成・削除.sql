@@ -1,5 +1,5 @@
 -- SHOW DATABASESで全てのデータベースを参照
-mysql> SHOW DATABASES;
+SHOW DATABASES;
 -- 結果
 /*
 +--------------------+
@@ -14,7 +14,7 @@ mysql> SHOW DATABASES;
 */
 
 -- LIKE節を用いてパターンマッチングを行う
-mysql> SHOW DATABASES LIKE '%schema';
+SHOW DATABASES LIKE '%schema';
 -- 結果
 /*
 +--------------------+
