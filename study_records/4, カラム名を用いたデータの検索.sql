@@ -1,3 +1,4 @@
+/*
 <test_scores>
 +------+------+---------+------+---------+
 | id   | name | english | math | science |
@@ -6,10 +7,12 @@
 |    2 | Ai   | 96      | 80   | 76      |
 |    3 | Ken  | 90      | 67   | 78      |
 +------+------+---------+------+---------+
+*/
      
 -- SELECT（カラム名）FROM（テーブル名）で指定したカラムのデータを取り出す
-mysql> SELECT english FROM test_scores;
+SELECT english FROM test_scores;
 -- 結果
+/*
 +---------+
 | english |
 +---------+
@@ -18,10 +21,12 @@ mysql> SELECT english FROM test_scores;
 | 90      |
 +---------+
 3 rows in set (0.00 sec)
+*/
 
 -- SELECT（カラム名, , , ）FROM（テーブル名）で指定した複数のカラムのデータを取り出す
-mysql> SELECT math, science FROM test_scores;
+SELECT math, science FROM test_scores;
 -- 結果
+/*
 +------+---------+
 | math | science |
 +------+---------+
@@ -30,9 +35,11 @@ mysql> SELECT math, science FROM test_scores;
 | 67   | 78      |
 +------+---------+
 3 rows in set (0.00 sec)
+*/
 
 -- 末尾を;から\Gに変更すると縦に表示される
-mysql> SELECT * FROM test_scores\G
+SELECT * FROM test_scores\G
+/*
 -- 結果
 *************************** 1. row ***************************
      id: 1
@@ -53,3 +60,4 @@ english: 90
    math: 67
 science: 78
 3 rows in set (0.02 sec)
+*/
