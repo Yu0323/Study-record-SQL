@@ -10,7 +10,6 @@ CREATE TABLE test_scores (id INT, name VARCHAR(100),english VARCHAR(100), math V
 -- 結果
 /*
 Query OK, 0 rows affected (0.08 sec)
-※適当なカラム名とデータ型を指定した
 */
 
 -- SHOW TABLESでテーブル一覧を参照
