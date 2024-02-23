@@ -77,7 +77,7 @@ SELECT * FROM test_scores ORDER BY english DESC, math;
 -- WHEREを用いて条件を満たすデータだけ取り出した後に、ORDER BYでソートを行う
 SELECT * FROM test_scores WHERE math BETWEEN 80 AND 90 ORDER BY english;
 -- 結果
-\*
+/*
 +------+---------+---------+------+---------+
 | id   | name    | english | math | science |
 +------+---------+---------+------+---------+
@@ -86,9 +86,12 @@ SELECT * FROM test_scores WHERE math BETWEEN 80 AND 90 ORDER BY english;
 |    6 | Miyoshi | 96      | 84   | 53      |
 +------+---------+---------+------+---------+
 3 rows in set (0.01 sec)
-*\
-  
-mysql> SELECT * FROM test_scores ORDER BY FIELD(math,80,67,98);
+*/
+
+-- FIELD関数を用いると指定した値の順番にソートを行う。FIELD(カラム名,値, , ,)の形式で書く
+SELECT * FROM test_scores ORDER BY FIELD(math,80,67,98);
+-- 結果
+/*
 +------+---------+---------+------+---------+
 | id   | name    | english | math | science |
 +------+---------+---------+------+---------+
@@ -100,21 +103,12 @@ mysql> SELECT * FROM test_scores ORDER BY FIELD(math,80,67,98);
 |    5 | Ishida  | 78      | 98   | NULL    |
 +------+---------+---------+------+---------+
 6 rows in set (0.01 sec)
+*/
 
-mysql> SELECT * FROM test_scores ORDER BY math > 80 DESC;
-+------+---------+---------+------+---------+
-| id   | name    | english | math | science |
-+------+---------+---------+------+---------+
-|    1 | Yu      | 98      | 97   | 65      |
-|    4 |         | 67      | 89   | 90      |
-|    5 | Ishida  | 78      | 98   | NULL    |
-|    6 | Miyoshi | 96      | 84   | 53      |
-|    2 | Ai      | 96      | 80   | 76      |
-|    3 | Ken     | 90      | 67   | 78      |
-+------+---------+---------+------+---------+
-6 rows in set (0.01 sec)
-
-mysql> SELECT * FROM test_scores ORDER BY math >= 90;
+-- ORDER BYの後の値に条件を加えると、条件を満たす値のみソートの対象となる
+SELECT * FROM test_scores ORDER BY math >= 90;
+-- 結果
+/*
 +------+---------+---------+------+---------+
 | id   | name    | english | math | science |
 +------+---------+---------+------+---------+
@@ -126,3 +120,4 @@ mysql> SELECT * FROM test_scores ORDER BY math >= 90;
 |    5 | Ishida  | 78      | 98   | NULL    |
 +------+---------+---------+------+---------+
 6 rows in set (0.00 sec)
+*/
