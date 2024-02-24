@@ -77,5 +77,5 @@ Rows matched: 1  Changed: 1  Warnings: 0
 DELETE FROM test_scores WHERE id = 1
 -- 結果
 /*
-※ id1のテーブルが削除される
+id1のテーブルが削除される（実際には実行せず）
 */
