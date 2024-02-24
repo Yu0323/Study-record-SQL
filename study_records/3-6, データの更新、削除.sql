@@ -72,3 +72,10 @@ Rows matched: 1  Changed: 1  Warnings: 0
 |    7 | Yoshida | 78      | 67   | 45      |
 +------+---------+---------+------+---------+
 */
+
+-- DELETE句を用いてテーブルを削除する、DELETE FROM（テーブル名）WHERE（条件）の形式で書く
+DELETE FROM test_scores WHERE id = 1
+-- 結果
+/*
+※ id1のテーブルが削除される
+*/
