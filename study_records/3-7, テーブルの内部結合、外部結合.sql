@@ -83,3 +83,51 @@ SELECT * FROM test_scores INNER JOIN gender USING(name);
 +---------+------+---------+------+---------+--------+
 7 rows in set (0.00 sec)
 */
+
+-- 外部結合は『値が同じもの』と『右か左に指定したテーブルのデータ』を結合する
+-- 外部結合には右外部結合（RIGHT OUTER JOIN）と左外部結合（LEFT OUTER JOIN）がある
+
+-- nameカラムを対象として、右外部結合を行う（genderテーブルのデータが残される）
+SELECT * FROM test_scores RIGHT OUTER JOIN gender USING(name);
+-- 結果
+/*
++---------+--------+------+---------+------+---------+
+| name    | gender | id   | english | math | science |
++---------+--------+------+---------+------+---------+
+| Yu      | man    |    1 | 95      | 90   | 87      |
+| Ai      | woman  |    2 | 96      | 80   | 76      |
+| Sato    | woman  |    4 | 67      | 89   | 90      |
+| Ishida  | woman  |    5 | 78      | 98   | NULL    |
+| Miyoshi | woman  |    6 | 96      | 84   | 53      |
+| Maeda   | man    |    7 | 90      | 56   | 78      |
+| Yoshida | man    |    7 | 78      | 67   | 45      |
+| Tanaka  | man    | NULL | NULL    | NULL | NULL    |
++---------+--------+------+---------+------+---------+
+8 rows in set (0.00 sec)
+*/
+
+-- nameカラムを対象として、左外部結合を行う（test_scoresテーブルのデータが残される）
+SELECT * FROM test_scores LEFT OUTER JOIN gender USING(name);
+-- 結果
+/*
++---------+------+---------+------+---------+--------+
+| name    | id   | english | math | science | gender |
++---------+------+---------+------+---------+--------+
+| Yu      |    1 | 95      | 90   | 87      | man    |
+| Ai      |    2 | 96      | 80   | 76      | woman  |
+| Sato    |    4 | 67      | 89   | 90      | woman  |
+| Ishida  |    5 | 78      | 98   | NULL    | woman  |
+| Miyoshi |    6 | 96      | 84   | 53      | woman  |
+| Maeda   |    7 | 90      | 56   | 78      | man    |
+| Yoshida |    7 | 78      | 67   | 45      | man    |
+| Ken     |    3 | 90      | 67   | 78      | NULL   |
++---------+------+---------+------+---------+--------+
+8 rows in set (0.01 sec)
+*/
+
+/*
+※補足
+3つ以上のテーブルの結合を行う際は以下のようにJOIN句を続ける
+
+SELECT * FROM table1 INNER JOIN table2 ON table1.A = table2.A INNER JOIN table3 ON table1.A = table3.A;
+*/
