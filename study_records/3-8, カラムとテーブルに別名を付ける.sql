@@ -1,4 +1,37 @@
-mysql> SELECT id AS ID名 FROM test_scores;
+/*
+<test_scores 拡張版>
++------+---------+---------+------+---------+
+| id   | name    | english | math | science |
++------+---------+---------+------+---------+
+|    1 | Yu      | 98      | 97   | 65      |
+|    2 | Ai      | 96      | 80   | 76      |
+|    3 | Ken     | 90      | 67   | 78      |
+|    4 |         | 67      | 89   | 90      |
+|    5 | Ishida  | 78      | 98   | NULL    |
+|    6 | Miyoshi | 96      | 84   | 53      |
+|    7 | Maeda   | 90      | 56   | 78      |
+|    7 | Yoshida | 78      | 67   | 45      |
++------+---------+---------+------+---------+
+
+<gender>
++---------+--------+
+| name    | gender |
++---------+--------+
+| Yu      | man    |
+| Ai      | woman  |
+| Sato    | woman  |
+| Ishida  | woman  |
+| Miyoshi | woman  |
+| Maeda   | man    |
+| Yoshida | man    |
+| Tanaka  | man    |
++---------+--------+
+*/
+
+-- SELECT（カラム名）AS（別名）で、カラム名に別名を設定して表示
+SELECT id AS ID名 FROM test_scores;
+-- 結果
+/*
 +------+
 | ID名 |
 +------+
@@ -12,34 +45,25 @@ mysql> SELECT id AS ID名 FROM test_scores;
 |    7 |
 +------+
 8 rows in set (0.01 sec)
+*/
 
-mysql> SELECT math AS 数学, MAX(math) AS 最高点, MIN(math) AS 最低点, AVG(math) AS 平均点 FROM test_scores;
-ERROR 1140 (42000): In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'sample_db.test_scores.math'; this is incompatible with sql_mode=only_full_group_by
-mysql> SELECT math AS 数学, MAX(math) AS 最高点, MIN(math) AS 最低点, AVG(math) AS 平均点 FROM test_scores GROUP BY math;
-+------+--------+--------+--------+
-| 数学 | 最高点 | 最低点 | 平均点 |
-+------+--------+--------+--------+
-| 56   | 56     | 56     |     56 |
-| 67   | 67     | 67     |     67 |
-| 80   | 80     | 80     |     80 |
-| 84   | 84     | 84     |     84 |
-| 89   | 89     | 89     |     89 |
-| 90   | 90     | 90     |     90 |
-| 98   | 98     | 98     |     98 |
-+------+--------+--------+--------+
-7 rows in set (0.03 sec)
-
-mysql> SELECT MAX(math) AS 最高点, MIN(math) AS 最低点, AVG(math) AS 平均点 FROM test_scores;
+-- 各計算結果に別名を設定して表示
+SELECT MAX(math) AS 最高点, MIN(math) AS 最低点, AVG(math) AS 平均点 FROM test_scores;
+-- 結果
+/*
 +--------+--------+--------+
 | 最高点 | 最低点 | 平均点 |
 +--------+--------+--------+
 | 98     | 56     | 78.875 |
 +--------+--------+--------+
 1 row in set (0.00 sec)
+*/
 
-mysql> SELECT * FROM test_scores AS t INNER JOIN gender AS g ON t.name = gender.name;
-ERROR 1054 (42S22): Unknown column 'gender.name' in 'on clause'
-mysql> SELECT * FROM test_scores AS t INNER JOIN gender AS g ON t.name = g.name;
+-- SELECT * FROM（テーブル名）AS（別名）またはSELECT * FROM（テーブル名）（別名）でテーブル名に別名を設定する
+-- この事によってコマンドを書く手間が省ける場合がある，以下ではtest_scoresをt，genderをgと省略して記述している
+SELECT * FROM test_scores AS t INNER JOIN gender AS g ON t.name = g.name;
+-- 結果
+/*
 +------+---------+---------+------+---------+---------+--------+
 | id   | name    | english | math | science | name    | gender |
 +------+---------+---------+------+---------+---------+--------+
@@ -52,3 +76,4 @@ mysql> SELECT * FROM test_scores AS t INNER JOIN gender AS g ON t.name = g.name;
 |    7 | Yoshida | 78      | 67   | 45      | Yoshida | man    |
 +------+---------+---------+------+---------+---------+--------+
 7 rows in set (0.01 sec)
+*/
