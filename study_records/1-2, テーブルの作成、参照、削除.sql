@@ -40,8 +40,8 @@ DESCRIBE test_scores;
 5 rows in set (0.02 sec)
 */
 
--- DROP（テーブル名）でテーブルを削除
-DROP test_scores;
+-- DROP TABLE（テーブル名）でテーブルを削除
+DROP TABLE test_scores;
 -- 結果
 /*
 +---------------------+
